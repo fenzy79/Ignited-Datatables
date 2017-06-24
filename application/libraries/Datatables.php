@@ -477,7 +477,7 @@
 			}
 			else
 			{
-				$query = $this->ci->db->select('COUNT(*) as COUNT');
+				$this->ci->db->select('COUNT(*) as COUNT');
 				$query = $this->ci->db->get($this->table, NULL, NULL, FALSE)->row_array();
 				return $query['COUNT'];
 			}
