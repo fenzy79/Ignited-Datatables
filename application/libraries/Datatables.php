@@ -475,6 +475,11 @@
 				$query = $this->ci->db->get($this->table, NULL, NULL, FALSE);
 				return $query->num_rows();
 			}
+			else if(count($this->group_by) > 0 || count($this->having) > 0)
+			{
+				$query = $this->ci->db->get($this->table, NULL, NULL, FALSE);
+				return $query->num_rows();
+			}
 			else
 			{
 				$this->ci->db->select('COUNT(*) as COUNT');
